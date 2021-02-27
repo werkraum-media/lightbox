@@ -1,13 +1,30 @@
 {
-  "name": "lightbox-crpozo",
-  "version": "1.1.4",
-  "description": "",
-  "main": "index.js",
+  "name": "lightbox-cpozo-bundle",
+  "version": "1.2.0",
+  "description": "Get a nice lightbox with different options",
+  "main": "main.js",
   "scripts": {
+    "webpack": "./node_modules/.bin/webpack ./src/js/main.js --output-path ./dist/js/ --output-filename bundle.js --mode production",
+    "build": "babel dist/js/bundle.js -o dist/js/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "Lightbox"
+  ],
   "author": "Carlos Pozo",
   "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
+    "@babel/node": "^7.13.0",
+    "@babel/preset-env": "^7.13.5",
+    "css-loader": "^5.1.0",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0"
+  },
   "dependencies": {
     "bootstrap": "^5.0.0-beta2"
   }
