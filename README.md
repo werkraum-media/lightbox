@@ -22,8 +22,8 @@ Created with module bundler webpack and babel transpiler.
 ```
 
 # Demo
-<img src="demo/images/demo.PNG">
-<img src="demo/images/demo2.PNG">
+<img src="assets/images/demo.PNG">
+<img src="assets/images/demo2.PNG">
 
 
 # Options
