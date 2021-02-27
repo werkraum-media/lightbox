@@ -1,3 +1,4 @@
 node_modules
 babel.config.json
 webpack.config.js
+bundle.js.LICENSE.txt
