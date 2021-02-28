@@ -8,14 +8,16 @@ Get a nice lightbox with different options
 
 Demo inside dist/index.html
 
-Created with module bundler webpack and babel transpiler. 
+Package Manager: npm
+Transpiling: babel
+Bundling: webpack
 
 # Usage
 
 ```
    <div data-toggle="lightbox">
-        <img class="col-md-6 lightbox-bootstrap" src="">
-        <img class="col-md-6 lightbox-bootstrap" src="">
+        <img class="lightbox-bootstrap" src="">
+        <img class="lightbox-bootstrap" src="">
     </div>
 
     <script src="./js/bundle.js"></script>
