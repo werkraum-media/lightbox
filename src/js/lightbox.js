@@ -1,15 +1,15 @@
 'use-strict'
 
 function SetupLightboxContainer(options) {
-    const lightboxContainers = document.querySelectorAll(`[data-toggle="lightbox"]`);
+    const lightboxContainers = document.querySelectorAll(`[data-bs-toggle="lightbox"]`);
 
     if(lightboxContainers.length > 0)
     {
         for(var i=0; i<lightboxContainers.length;i++)
         {
             // Containers for different set of images
-            lightboxContainers[i].setAttribute("data-toggle", "lightbox-container-v"+i);
-            const lightboxImages = document.querySelectorAll(`[data-toggle="lightbox-container-v${i}"] .lightbox-bootstrap`);
+            lightboxContainers[i].setAttribute("data-bs-toggle", "lightbox-container-v"+i);
+            const lightboxImages = document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"] .lightbox-bootstrap`);
             // Bootstrap Slider
             var carouselSlide = undefined;
             carouselSlide = document.createElement('div');
@@ -53,12 +53,12 @@ function SetupLightboxContainer(options) {
             const modal = document.getElementById("modal-lightbox");
             modal.appendChild(carouselSlide);
             // Options for lightbox  
-            if(document.querySelectorAll(`[data-toggle="lightbox-container-v${i}"][data-arrow="true"]`).length>0)
+            if(document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-arrow="true"]`).length>0)
                 addArrows(carouselInner,carouselSlide.id);
-            if(document.querySelectorAll(`[data-toggle="lightbox-container-v${i}"][data-ride]`).length>0)
-                carouselSlide.setAttribute("data-bs-ride", document.querySelectorAll(`[data-toggle="lightbox-container-v${i}"][data-ride]`)[0].attributes.getNamedItem("data-ride").nodeValue);
-            if(document.querySelectorAll(`[data-toggle="lightbox-container-v${i}"][data-interval]`).length>0)
-                carouselSlide.setAttribute("data-bs-interval", document.querySelectorAll(`[data-toggle="lightbox-container-v${i}"][data-interval]`)[0].attributes.getNamedItem("data-interval").nodeValue);
+            if(document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-ride]`).length>0)
+                carouselSlide.setAttribute("data-bs-ride", document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-ride]`)[0].attributes.getNamedItem("data-bs-ride").nodeValue);
+            if(document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-interval]`).length>0)
+                carouselSlide.setAttribute("data-bs-interval", document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-interval]`)[0].attributes.getNamedItem("data-bs-interval").nodeValue);
         }
 
         // Open carrousel in the same image the user clicked
