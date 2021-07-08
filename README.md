@@ -1,6 +1,6 @@
 # Description
 
-Get a nice lightbox with different options
+Get a nice lightbox with different options, for Bootstrap 5.
 
 # Installation
 
@@ -8,9 +8,9 @@ Get a nice lightbox with different options
 
 Demo inside dist/index.html
 
-Package Manager: npm
-Transpiling: babel
-Bundling: webpack
+* Package Manager: npm
+* Transpiling: babel
+* Bundling: webpack
 
 # Usage
 
@@ -33,4 +33,3 @@ Bundling: webpack
 * *interval_time* -  data-bs-interval="5000" (number/false stops the looping)
 * *effect_type* - data-bs-ride="normal" (fade/normal)
 * *arrow_mode* - data-bs-arrow="true" (true/false)
- 

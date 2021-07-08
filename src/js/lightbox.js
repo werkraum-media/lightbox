@@ -1,4 +1,4 @@
-'use-strict'
+'use-strict';
 
 function SetupLightboxContainer(options) {
     const lightboxContainers = document.querySelectorAll(`[data-bs-toggle="lightbox"]`);

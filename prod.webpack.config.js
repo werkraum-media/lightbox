@@ -26,6 +26,34 @@ const config = [
       }
     ]
   }
+},
+{
+  entry: "./src/js/bootstrap.js",
+  mode: "production",
+  performance: { hints: false },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bootstrap.min.js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          "style-loader",
+          "css-loader"
+        ],
+      }
+    ]
+  }
 }];
 
 module.exports = config;
