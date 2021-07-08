@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "webpack": "./node_modules/.bin/webpack ./src/js/main.js --output-path ./dist/js/ --output-filename bundle.js --mode production",
-    "build": "babel dist/js/bundle.js -o dist/js/bundle.js",
+    "build": "webpack --config prod.webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,7 +17,8 @@
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.1",
     "@babel/node": "^7.13.0",
-    "@babel/preset-env": "^7.13.5",
+    "@babel/preset-env": "^7.14.7",
+    "babel-preset-minify": "^0.5.1",
     "css-loader": "^5.1.0",
     "node-sass": "^5.0.0",
     "sass-loader": "^11.0.1",
@@ -26,6 +27,7 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "bootstrap": "^5.0.0-beta2"
+    "babel-loader": "^8.2.2",
+    "bootstrap": "^5.0.2"
   }
 }

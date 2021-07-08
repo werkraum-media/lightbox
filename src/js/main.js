@@ -1,7 +1,7 @@
 import { SetupLightboxContainer } from './lightbox'
 
 SetupLightboxContainer({
-    interval_time: 5000,
+    interval_time: -1,
     arrow_mode: true,
     effect_type: "fade"
 });
