@@ -37,6 +37,8 @@ function SetupLightboxContainer(options) {
                 // add modal targets
                 lightboxImages[i].setAttribute("data-bs-toggle","modal");
                 lightboxImages[i].setAttribute("data-bs-target","#lightboxModal");
+                lightboxImages[i].setAttribute("data-mdb-toggle","modal"); // MDBootstrap
+                lightboxImages[i].setAttribute("data-mdb-target","#lightboxModal");// MDBootstrap
                 // Component image
                 const carouselItem = document.createElement('div');
                 carouselItem.setAttribute("class", "carousel-item carousel-item-modal");
@@ -55,10 +57,16 @@ function SetupLightboxContainer(options) {
             // Options for lightbox  
             if(document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-arrow="true"]`).length>0)
                 addArrows(carouselInner,carouselSlide.id);
-            if(document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-ride]`).length>0)
-                carouselSlide.setAttribute("data-bs-ride", document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-ride]`)[0].attributes.getNamedItem("data-bs-ride").nodeValue);
-            if(document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-interval]`).length>0)
-                carouselSlide.setAttribute("data-bs-interval", document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-interval]`)[0].attributes.getNamedItem("data-bs-interval").nodeValue);
+            if(document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-ride]`).length>0) {
+                const value = document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-ride]`)[0].attributes.getNamedItem("data-bs-ride").nodeValue;
+                carouselSlide.setAttribute("data-bs-ride", value);
+                carouselSlide.setAttribute("data-mdb-ride", value);
+            }
+            if(document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-interval]`).length>0) {
+                const value = document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-interval]`)[0].attributes.getNamedItem("data-bs-interval").nodeValue;
+                carouselSlide.setAttribute("data-bs-interval", value);
+                carouselSlide.setAttribute("data-mdb-interval", value);
+            }
         }
 
         // Open carrousel in the same image the user clicked
@@ -95,11 +103,11 @@ function addArrows(carouselItem, id)
 {
     const div = document.createElement('div');
     div.innerHTML = `
-    <button class="carousel-control-prev" type="button" data-bs-target="#${id}"  data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#${id}" data-bs-slide="prev" data-mdb-target="#${id}" data-mdb-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#${id}"  data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#${id}" data-bs-slide="next" data-mdb-target="#${id}" data-mdb-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
@@ -119,7 +127,7 @@ function addModal(carouselItem)
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title"></h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-dismiss="modal" aria-label="Close"></button>
             </div>
             <div id="modal-lightbox" class="modal-body"></div>
         </div>
