@@ -51,7 +51,7 @@ function SetupLightboxContainer(options) {
             carouselSlide.appendChild(carouselInner);
             // Create modal
             if(i==0)
-                addModal(lightboxContainers[i].parentNode);
+                addModal(lightboxContainers[i].parentNode.parentNode);
             const modal = document.getElementById("modal-lightbox");
             modal.appendChild(carouselSlide);
             // Options for lightbox  
