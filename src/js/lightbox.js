@@ -61,11 +61,17 @@ function SetupLightboxContainer(options) {
                 const value = document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-ride]`)[0].attributes.getNamedItem("data-bs-ride").nodeValue;
                 carouselSlide.setAttribute("data-bs-ride", value);
                 carouselSlide.setAttribute("data-mdb-ride", value);
+            } else {
+                carouselSlide.setAttribute("data-bs-ride", "carousel");
+                carouselSlide.setAttribute("data-mdb-ride", "carousel");
             }
             if(document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-interval]`).length>0) {
                 const value = document.querySelectorAll(`[data-bs-toggle="lightbox-container-v${i}"][data-bs-interval]`)[0].attributes.getNamedItem("data-bs-interval").nodeValue;
                 carouselSlide.setAttribute("data-bs-interval", value);
                 carouselSlide.setAttribute("data-mdb-interval", value);
+            } else {
+                carouselSlide.setAttribute("data-bs-interval", "false");
+                carouselSlide.setAttribute("data-mdb-interval", "false");
             }
         }
 
